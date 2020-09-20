@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一题</title>
+    <style>
+        .a{
+            width: 80px;
+            height: 20px;
+        }
+        h6{
+            float: left;
+            font-size: 18px;
+        }
+        .div{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" class="a">
+<input type="text" class="a">
+<input type="text" class="a">
+<input type="button" id="btn" class="a" value="提交">
+<div class="div">
+    <h6>数据1</h6><h6>数据2</h6><h6>数据3</h6><h6>操作</h6>
+    <span></span>
+</div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oInp = document.querySelectorAll('input').value;
+        var oSpan = document.getElementsByTagName('span');
+
+        oBtn.onclick = function () {
+            oSpan.innerHTML = oInp;
+        }
+    </script>
+</body>
+</html>

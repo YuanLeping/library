@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第三题-红绿灯</title>
+    <style>
+        .left{
+            float: left;
+            width: 100px;
+            height: 600px;
+            background-color: #eaeaea;
+        }
+        .right{
+            float: left;
+            width: 120px;
+            height: 270px;
+            background-color: #eaeaea;
+        }
+        .deng{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #eaeaea;
+            border: 1px solid black;
+            margin: 20px 0 0 20px;
+            transition: .1s;
+            box-shadow: #a09f9f;
+        }
+        .current{
+            background-color: red;
+        }
+        span{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="left">
+        <span id="timer" >10</span>
+    </div>
+    <div class="right">
+        <div class="deng current" id="red"></div>
+        <div class="deng" id="green"></div>
+        <div class="deng" id="yellow"></div>
+    </div>
+</div>
+<script>
+    var oH = document.getElementById('red');
+    var oL = document.getElementById('green');
+    var oY = document.getElementById('yellow');
+    var timer = document.getElementById('timer')[0];
+    var index = 10;
+    /*function time(){
+        index--;
+        timer.innerHTML = index;
+    }*/
+    setInterval(function () {
+        oH.style.background = '#eaeaea';
+        oY.style.background = 'yellow';
+        setInterval(function () {
+            oY.style.background = 'yellow';
+            setInterval(function () {
+                oY.style.background = '#eaeaea';
+                oL.style.background = 'green';
+            },5000)
+        },5000)
+    },10000);
+
+</script>
+</body>
+</html>
